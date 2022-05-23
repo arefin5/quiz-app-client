@@ -39,12 +39,14 @@ function App() {
           {/* <Route exact path="/student/dashboard" element={<ProtectedRoute>
             <StudentDash/>
           </ProtectedRoute>} /> */}
-          <Route exact path="/quiz" element={<ProtectedRoute>
+          {/* <Route exact path="/quiz" element={<ProtectedRoute>
             <Quiz/>
-          </ProtectedRoute>} />
-          <Route exact path="/exam" element={<ProtectedRoute>
+          </ProtectedRoute>} /> */}
+          {/* <Route exact path="/exam" element={<ProtectedRoute>
             <User/>
-          </ProtectedRoute>} />
+          </ProtectedRoute>} /> */}
+            <Route exact path="/quiz"  element={<Quiz />}/>
+            <Route exact path="/exam"  element={<User/>} />
           <Route exact path="/admin/dashboard" element={
             <AdminPanel/>
           } />
@@ -55,12 +57,11 @@ function App() {
             />
             <Route exact path="/teacher/dashboard" element={<TeacherDashboard/>} />
             <Route exact path="/student/dashboard" element={<StudentDash/>} />
-           
             {/*  */}
             <Route exact path="/admin/dashboard/students" element={<StudenList/>} />
             <Route exact path="/admin/dashboard/question/list" element={<QuestionList/>} />
             <Route exact path="/admin/dashboard/edit-question/:id" element={ <SingleQuestion/>} />
-            <Route exact path="/reults" element={<StudentResult/>} />
+            <Route exact path="/reults/" element={<StudentResult/>} />
             <Route exact path="/user/profile" element={<Profile />}/>
         </Routes>
       </BrowserRouter>

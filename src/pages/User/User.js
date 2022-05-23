@@ -29,6 +29,7 @@ try{
 // console.log("user",_id) ;
   const {data} =await axios.post(BaseUrl+"/create-student",{name,roll,category,_id});
     //  console.log("form submit",data) ;
+
     if(data.error){
     console.log("error") ;
 }else{
@@ -37,11 +38,12 @@ try{
     dispatch({type:STUDENT_SETUP,
      payload: data.student,
   });
+  
+
   // save in local storage
   window.localStorage.setItem("students", JSON.stringify(data));
   // redirect to quiz
-  
-  navigator("/quiz")
+   navigator("/quiz")
 }
 }catch(err){
   console.log(err)

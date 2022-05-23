@@ -15,7 +15,6 @@ const TeacherSignUp = () => {
     const [loading, setLoading] = React.useState(false);
     const {state} = useUserContext();
     const navigate = useNavigate();
-   
     const handleSubmit = async (e) => {
         e.preventDefault();
         // console.log(fname, lname, email, password)
@@ -33,12 +32,11 @@ const TeacherSignUp = () => {
                 window.alert(data.error);
             } else {
                 window.alert("Account Create Successful")
-
                 // update context
               setEmail("");
               setPassword("");
               setLoading(false);
-              navigate("/login");
+              navigate("//teacher/login");
             }
           } catch (err) {
             toast.error(err.response.data);

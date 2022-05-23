@@ -19,14 +19,15 @@ const StudentDash = () => {
                   <h4></h4><span>(student)</span>
               </div>
               <div className='student-link-container'>
-                <div>
+                <div className='dash'>
                     <DashboardIcon/>
                     <Link to="/student/dashboard" >Dashboard</Link>
                 </div>
                 {/* quiz page start */}
+
                 <div>
                     <AssignmentIcon/>
-                    <Link to="/exam" >Exam</Link>
+                    <Link  to="/exam" >Exam</Link>
                 </div>
                 <div>
                     <HighlightIcon/>

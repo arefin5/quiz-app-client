@@ -11,6 +11,7 @@ const CreateQuestion = () => {
   const [first, setFirst] = useState("");
   const [second, setSecond] = useState("");
   const [third, setThird] = useState("");
+  const [category,setCatagory ] = useState("");
   // const [fourth, setFourth] = useState("");
    const[answer,setAnswer]=useState("");
   // console.log(incorrectAnswers);
@@ -18,14 +19,7 @@ const CreateQuestion = () => {
     e.preventDefault();
     // console.log(questionName);
     try {
-      // when Back end is ready
 
-      //  create arry of incoret answers
-      // const incorrect_answer = [];
-      // incorrect_answer.push(first);
-      // incorrect_answer.push(second);
-      // incorrect_answer.push(third);
-      // console.log(incorrect_answer);
       const { data } = axios.post(BaseUrl+"/create-question", {
         questionName,
         first,
@@ -68,6 +62,10 @@ const CreateQuestion = () => {
                   onSubmit={createQuestionSubmitHandler}
                 >
                   <h2>Creat Questions</h2>
+                  <select className='form-control m-2' name='category' value={category} onChange={(e)=>setCatagory(e.target.value)} >
+                  <option  value="mcq">mcq</option>
+                  <option  value="multiple">multiple</option>
+                </select>
                   <input
                     className="form-control m-2"
                     type="text"

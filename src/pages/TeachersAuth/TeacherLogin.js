@@ -56,7 +56,7 @@ const TeacherLogin = () => {
                         <div className='teacherlogin_text'>
                            <h2>One of us?</h2>
                             <p>Lorem ipsum doller site emmet</p>
-                            <Link to="/signup" style={{width:"80px",border:"1px solid #fff",borderRadius:"10px",margin:"0 auto",zIndex:"9999px",padding:"5px"}}>sign up</Link>
+                            <Link to="/teacher/signup" style={{width:"80px",border:"1px solid #fff",borderRadius:"10px",margin:"0 auto",zIndex:"9999px",padding:"5px"}}>sign up</Link>
                         </div>
                         <div className='teacherloginimgBox'>
                             <img  src={signinTable} alt="leaner table"/>

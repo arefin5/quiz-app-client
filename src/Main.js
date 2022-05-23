@@ -15,8 +15,6 @@ function Main() {
   const [state, setState] = useContext(UserContext);
 
   return (
-    
-     
           <Routes>
             {state && state.user ? (
               <>

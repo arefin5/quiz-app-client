@@ -12,3 +12,7 @@
   padding: 0.5rem 0;
   transition: var(--transition);
 }
+.dash{
+  text-align: center;
+  margin-left: 40px;
+}

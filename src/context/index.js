@@ -29,6 +29,7 @@ const userReducer = (state,action)=>{
         ...state,
         student:action.payload
       }
+
     case USER_SIGNOUT:
       return{
         ...state,
@@ -40,6 +41,7 @@ const userReducer = (state,action)=>{
       return state
   }
 }
+
 
 
 export const UserProvider = ({ children }) => {

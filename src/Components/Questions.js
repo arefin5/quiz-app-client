@@ -27,6 +27,7 @@ const Questions = ({ questions }) => {
     if (timer.current) clearInterval(timer.current);
   };
 
+
   const nextQuestion = () => {
     setIndex((oldIndex) => {
       const index = oldIndex + 1;
@@ -54,6 +55,8 @@ const Questions = ({ questions }) => {
       return;
     }
   };
+
+  
   const answers = [...incorrect_answer, correct_answer];
   const ScoreSubmite = async (e) => {
     e.preventDefault();
@@ -67,22 +70,27 @@ const Questions = ({ questions }) => {
       if (data.error) {
         console.log("error");
       } else {
+        // window.localStorage.removeItem("students");
         navigator("/exam");
         // save in local storage
-        window.localStorage.removeItem("students");
       }
     } catch (err) {
       console.log(err);
     }
   };
+
+
+
   useEffect(() => {
     window.addEventListener("visibilitychange",()=>{
       // write your code here
       // console.log("visibility change k" );
       navigator("/")
-      localStorage.removeItem("students");
+      // localStorage.removeItem("students");
       })
   }, []);
+
+
 
   return (
     <div className="question">

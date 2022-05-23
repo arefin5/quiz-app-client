@@ -8,3 +8,6 @@ a{
 .main{
     float: left !important;
 }
+.active{
+    display: hiden;
+ }

@@ -10,3 +10,6 @@
 .log-out{
    padding-top:10px !important ;
 }
+.active{
+   display: hiden;
+}
