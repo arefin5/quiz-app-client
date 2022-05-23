@@ -9,5 +9,5 @@ a{
     float: left !important;
 }
 .active{
-    display: hiden;
+    display: none;
  }
