@@ -28,7 +28,7 @@ const TeacherLogin = () => {
             });
             if (data.error) {
                 // console.log();
-                window.alert("Please try again")
+                window.alert("Eamil or password is not correct")
                 toast.error("Please try again");
             } else {
                 window.alert("Login Successful")
