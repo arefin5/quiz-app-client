@@ -59,7 +59,6 @@ import axios from 'axios';
 import {BaseUrl} from '../../utils/constant';
 import { FilePond, File, registerPlugin } from 'react-filepond'
 
-
  const WebcamStreamCapture = () => {
     const webcamRef = React.useRef(null);
     const mediaRecorderRef = React.useRef(null);
@@ -67,7 +66,6 @@ import { FilePond, File, registerPlugin } from 'react-filepond'
     const [recordedChunks, setRecordedChunks] = React.useState([]);
     const [videoSrc, setVideoSrc] = React.useState(null);
     const isInitialMount = React.useRef(true);
-
     useEffect(() => {
       if (isInitialMount.current) {
         isInitialMount.current = false;
@@ -78,7 +76,6 @@ import { FilePond, File, registerPlugin } from 'react-filepond'
         }
       }
     }, [capturing])
-
     const handleStartCaptureClick = React.useCallback(() => {
       setCapturing(true);
       mediaRecorderRef.current = new MediaRecorder(webcamRef.current.stream, {
@@ -90,7 +87,8 @@ import { FilePond, File, registerPlugin } from 'react-filepond'
       );
       mediaRecorderRef.current.start();
     }, [webcamRef, setCapturing, mediaRecorderRef]);
-  
+
+
     const handleDataAvailable = React.useCallback(
       ({ data }) => {
         if (data.size > 0) {
@@ -99,7 +97,7 @@ import { FilePond, File, registerPlugin } from 'react-filepond'
       },
       [setRecordedChunks]
     );
-  
+
     const handleStopCaptureClick = React.useCallback(() => {
       mediaRecorderRef.current.stop();
       setCapturing(false);
@@ -110,8 +108,6 @@ import { FilePond, File, registerPlugin } from 'react-filepond'
           type: "video/webm"
         });
         const url = URL.createObjectURL(blob);
-
-  
           console.log(url)
         // let file=blob;
         const formData = new FormData();
@@ -121,26 +117,24 @@ import { FilePond, File, registerPlugin } from 'react-filepond'
         // axios.post(BaseUrl+"/upload", formData)
       }
     }, [recordedChunks]);
-
     return (
          <>
-           <div className="d-flex flex-column align-items-center">
-        <Webcam audio={false} ref={webcamRef} height={400} width={500}/>
-        <video id="video-replay" height="400" width="500" controls></video>
+        <div className="row">
+          <div className="col-md-4">
+           <div className="text-center">
+        <Webcam audio={false} ref={webcamRef} />
+        <video id="video-replay" height="200" width="200" controls></video>
         {capturing ? (
           <button className="btn btn-danger" onClick={handleStopCaptureClick}>Stop Capture</button>
         ) : (
           <button className="btn btn-danger" onClick={handleStartCaptureClick}>Start Capture</button>
         )}
-        {recordedChunks.length > 0 && (
-          <div>
-            <button onClick={handleDownload}>Download</button>
-          </div>
-        )}
+        
       </div>
-      {/* from vilidation : */}
-   
+      </div>
+          </div>
          </>
-    );
-};
-export default WebcamStreamCapture
+    )
+}
+
+export default WebcamStreamCapture ;

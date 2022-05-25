@@ -45,6 +45,7 @@ try{
   // redirect to quiz
    navigator("/quiz")
 }
+
 }catch(err){
   console.log(err)
 }
@@ -60,7 +61,11 @@ try{
             <h2>Setup your information</h2>
             <div className='setupform p-3'>
             {/* <WebCamera /> */}
-            <WebcamStreamCapture />
+                <div className='vid'>
+                <WebcamStreamCapture />
+                </div>
+                   
+              
             {/* <VideoRecorder /> */}
               <form onSubmit={formSubmitHandler}>
                 <input className='form-control m-2' type="text" name="name" value={name} onChange={(e)=>setName(e.target.value)} placeholder='Enter Name'/>

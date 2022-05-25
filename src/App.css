@@ -13,3 +13,7 @@
 .active{
    display: hiden;
 }
+.vid {
+   margin-top: -172px !important;
+   text-align: center !important;
+}

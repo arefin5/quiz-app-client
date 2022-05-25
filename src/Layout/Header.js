@@ -205,12 +205,19 @@ const Header = () => {
            user && user ?<>
            
           <NavItem className="nav-item">
-            <Link to={`/reults/`}  className="nav-link">
+            <Link to="/reults " className="nav-link">
               Results
             </Link>
           </NavItem>
+          {/*  */}
           <NavItem className="nav-item">
             <Link to="/student/dashboard" className="nav-link">Student Dashboard</Link>
+          </NavItem>
+          {/* profile */}
+          <NavItem className="nav-item">
+            <Link to="/user/profile"  className="nav-link">
+              Profile
+            </Link>
           </NavItem>
           {user && user.role === "Admin" ? (
               <>
