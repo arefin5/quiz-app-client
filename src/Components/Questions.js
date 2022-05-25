@@ -71,7 +71,7 @@ const Questions = ({ questions }) => {
         console.log("error");
       } else {
         // window.localStorage.removeItem("students");
-        navigator("/result");
+        navigator("/reults");
         // save in local storage
       }
     } catch (err) {
